@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="245.0" prefWidth="363.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="splitshappenrachaelwilliams.FXMLDocumentController">
+    <children>
+        <Button id="calcBtn" fx:id="button" layoutX="131.0" layoutY="146.0" onAction="#handleButtonAction" text="Calculate Score!" />
+        <Label fx:id="label" layoutX="81.0" layoutY="188.0" minHeight="16" minWidth="69" prefHeight="32.0" prefWidth="101.0" text="Total Score: ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="rollInput" layoutX="107.0" layoutY="110.0" />
+      <Label layoutX="117.0" layoutY="73.0" text="Enter Your Rolls:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="108.0" layoutY="25.0" text="Splits Happen">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="calculatedScore" layoutX="182.0" layoutY="190.0" prefHeight="27.0" prefWidth="78.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

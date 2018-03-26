@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
  *
  * @author Rachael
  */
-public class FXMLDocumentController implements Initializable {
+public class BowlingLayoutController implements Initializable {
     
     @FXML
     private Label calculatedScore;
@@ -28,14 +28,23 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
+        int[] rollsArray = new int[21];
+        int score = 0;
+        
         //get user input from TextField
         if ((rollInput.getText() != null && !rollInput.getText().isEmpty())){
             String rolls = rollInput.getText();
             System.out.println("Calculating your score!");
-            int[] rollsArray = new int[21];
             rollsArray = rollsToArray(rolls);
             System.out.println(Arrays.toString(rollsArray));
-            //calculatedScore.setText(score);
+            
+            //apply scoring logic
+            BowlingScore gameScore = new BowlingScore(rollsArray);
+            score = gameScore.calculateScore();
+            
+            //print total score to UI
+            System.out.println(String.valueOf(score));
+            calculatedScore.setText(String.valueOf(score));
         }
         else{
             calculatedScore.setText("no input");
@@ -47,7 +56,7 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }    
 
-    private int[] rollsToArray(String rolls) {
+    public int[] rollsToArray(String rolls) {
         //splits individual rolls
         String[] rollString = rolls.split("");
         int[] rollInt = new int[rollString.length];
